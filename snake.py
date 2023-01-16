@@ -51,3 +51,12 @@ class Snake:
     def left(self):
         if self.head.heading() == 90.0 or self.head.heading() == 270.0:
             self.head.setheading(180)
+
+    # TODO reseting the game for new game
+
+    def reset(self):
+        for snake_segment in self.segment:
+            snake_segment.goto(1000, 1000)
+        self.segment.clear()
+        self.create_snake()
+        self.head = self.segment[0]
